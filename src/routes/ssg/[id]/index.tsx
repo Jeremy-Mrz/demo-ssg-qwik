@@ -18,5 +18,5 @@ export default component$(() => {
 })
 
 export const onStaticGenerate = async () => ({
-  params: Object.keys(dynamicIds).map((id) => ({ id })),
+  params: dynamicIds.map((id) => ({ id })),
 });

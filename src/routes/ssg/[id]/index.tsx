@@ -8,11 +8,27 @@ export default component$(() => {
   const queryParams = location.url.searchParams.get('q');
   return (
     <>
-      <h1>SSG dynamic route component</h1>
-      <p><b>With</b> onStaticGenerate</p>
-      <p>Params: {index}</p>
-      <p>Search Params: {queryParams ?? 'undefined'}</p>
-      <Link href="/">Home</Link>
+      <table>
+        <thead>
+          <tr>
+            <td colSpan={4}><b>SSG</b> dynamic page</td>
+          </tr>
+          <tr>
+            <th>Params</th>
+            <th>Search params</th>
+            <th>Has onStaticGenerate</th>
+            <th>Home page</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{index ?? 'undefined'}</td>
+            <td>{queryParams ?? 'undefined'}</td>
+            <td>Yes</td>
+            <td><Link href="/">Home</Link></td>
+          </tr>
+        </tbody>
+      </table>
     </>
   )
 })

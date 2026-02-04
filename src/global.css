@@ -1,0 +1,5 @@
+.ssg, 
+.no-ssg {
+  display: flex;
+  gap: 16px;
+}

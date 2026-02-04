@@ -4,7 +4,7 @@ import { dynamicIds } from "~/routes";
 
 export default component$(() => {
   const location = useLocation();
-  const index = location.params['index'];
+  const index = location.params['id'];
   const queryParams = location.url.searchParams.get('q');
   return (
     <>

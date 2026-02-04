@@ -1,22 +1,53 @@
 import { component$ } from "@qwik.dev/core";
 import { Link, type DocumentHead } from "@qwik.dev/router";
 
-export const dynamicIds = [1, 2];
+export const dynamicIds = [0];
 
 export default component$(() => {
   return (
     <>
-      <h1>Home</h1>
-      <Link href="static">Static</Link>
-      <div class="ssg">
-        {dynamicIds.map((id) => <Link key={id}  href={`ssg/${id}?q=${id}`}>Link - SSG - Dynamic - {id}</Link>)}
-        {dynamicIds.map((id) => <a key={id}  href={`ssg/${id}?q=${id}`}>Anchor - SSG - Dynamic - {id}</a>)}
-      </div>
-      <div class="no-ssg">
-        {dynamicIds.map((id) => <Link key={id}  href={`no-ssg/${id}?q=${id}`}>Link - No SSG - Dynamic - {id}</Link>)}
-        {dynamicIds.map((id) => <a key={id}  href={`no-ssg/${id}?q=${id}`}>Anchor - No SSG - Dynamic - {id}</a>)}
-      </div>
-
+      <table>
+        <thead>
+          <tr>
+            <th>Link</th>
+            <th>Tag</th>
+            <th>Has onStaticGenerate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colSpan={3}>Static page</td>
+          </tr>
+          <tr>
+            <td><Link href="static">Click</Link></td>
+            <td>Link</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td colSpan={3}>Dynamic params</td>
+          </tr>
+          <tr>
+            <td><Link href={`ssg/${0}?q=${0}`}>Click</Link></td>
+            <td>Link</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td><a href={`ssg/${0}?q=${0}`}>Click</a></td>
+            <td>Anchor</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td><Link href={`no-ssg/${0}?q=${0}`}>Click</Link></td>
+            <td>Link</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td><a href={`no-ssg/${0}?q=${0}`}>Click</a></td>
+            <td>Anchor</td>
+            <td>No</td>
+          </tr>
+        </tbody>
+      </table>
     </>
   );
 });

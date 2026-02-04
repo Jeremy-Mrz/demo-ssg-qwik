@@ -1,5 +1,40 @@
-.ssg, 
-.no-ssg {
-  display: flex;
-  gap: 16px;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  background-color: #fff;
+}
+
+thead {
+  background-color: #f5f7fa;
+}
+
+th,
+td {
+  padding: 10px 12px;
+  border: 1px solid #e0e4ea;
+  text-align: left;
+  vertical-align: middle;
+}
+
+th {
+  font-weight: 600;
+  color: #333;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #fafbfc;
+}
+
+td[colspan] {
+  background-color: #eef2f7;
+  font-weight: 600;
+  color: #444;
+}
+
+a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
 }

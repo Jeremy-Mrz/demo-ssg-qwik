@@ -25,6 +25,8 @@
   },
   "devDependencies": {
     "@eslint/js": "latest",
+    "eslint": "9.32.0",
+    "typescript-eslint": "8.38.0",
     "@qwik.dev/core": "2.0.0-beta.29",
     "@qwik.dev/router": "2.0.0-beta.29",
     "@types/node": "20.19.0",
